@@ -1,8 +1,10 @@
 import React from "react";
 import { FcRating } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
   const {
+    bookId,
     bookName,
     author,
     image,
@@ -16,7 +18,8 @@ const Book = ({ book }) => {
   } = book;
 
   return (
-    <div className="border w-fitm-2 rounded-md mx-auto my-10">
+    <Link to={`/book/${bookId}`}>
+        <div  className="border w-fitm-2 rounded-md mx-auto my-10">
       <div className="card w-96 bg-slate-50  p-4">
         <figure className="bg-slate-200 p-6">
           <img className="" src={`../../public/images/${image}.png`} alt="book-img" />
@@ -40,6 +43,7 @@ const Book = ({ book }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 
