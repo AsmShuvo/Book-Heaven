@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
   return (
-    <div>
+    <div className="mx-20 my-2">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
