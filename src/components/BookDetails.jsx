@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { isBookExists, saveBookToLocaalStorage } from "./LocalStorage";
 const BookDetails = () => {
   const books = useLoaderData();
   const { bookId } = useParams();
 
   const book = books.find((book) => book.bookId === bookId); // both string
-  console.log(book);
+  // console.log(book);
   const {
     bookName,
     author,
@@ -20,6 +22,19 @@ const BookDetails = () => {
     rating,
   } = book;
   console.log(bookName);
+
+  const handleSaveToLocalStorage= ()=>{
+    if(isBookExists(parseInt(bookId))){
+      const error = new Error('This boook is aleary added');
+      toast.error(error.message);
+    }
+    else{
+      toast("Book is added to the list");
+      saveBookToLocaalStorage(parseInt(bookId));
+    }
+    
+  }
+
   return (
     <div>
       <div className="card lg:card-side bg-base-100 border mx-20 p-4">
@@ -48,11 +63,13 @@ const BookDetails = () => {
           <p className="flex justify-between w-2/3 items-center">Year of Publishing : <span className="font-semibold" >{yearOfPublishing}</span></p>
           <p className="flex justify-between w-2/3 items-center">Rating : <span className="font-semibold" >{rating}</span></p>
           <div className="card-actions justify-start my-2 flex gap-2">
-            <button className="btn btn-outline btn-primary">Read</button>
-            <button className="btn btn-primary">Wishlist</button>
+            <button onClick={handleSaveToLocalStorage} className="btn btn-outline btn-primary">Read</button>
+            <button className="btn btn-primary" >Wishlist</button>
           </div>
         </div>
       </div>
+      {/* toastify */}
+      <ToastContainer />
     </div>
   );
 };
