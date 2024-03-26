@@ -29,7 +29,7 @@ const BookDetails = () => {
       toast.error(error.message);
     }
     else{
-      toast("Book is added to the list");
+      toast("Added to the list");
       saveBookToLocaalStorage(parseInt(bookId));
     }
     

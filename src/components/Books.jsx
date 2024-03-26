@@ -11,7 +11,7 @@ const Books = () => {
     },[])
     // console.log("data loaderd: ",books);
     return (
-        <div className='grid grid-cols-3 '>
+        <div className='grid grid-cols-3 px-20'>
             {
                 books.map(book => <Book key={book.bookId} book={book} />)
             }

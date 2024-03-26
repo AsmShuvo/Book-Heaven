@@ -1,6 +1,8 @@
 import React from 'react';
 import Banner from './Banner';
 import Books from './Books';
+import ListHeader from './ListHeader';
+import ReadList from './ReadList';
 const Home = () => {
     return (
         <div>
