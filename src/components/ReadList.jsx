@@ -6,6 +6,7 @@ import ListHeader from "./ListHeader";
 
 const ReadList = () => {
   const [list, setList] = useState([]);
+  const [displayList, setDisplayList] = useState([]);
   useEffect(() => {
     fetch("../../public/books.json")
       .then((res) => res.json())
@@ -20,30 +21,51 @@ const ReadList = () => {
             }
           }
           setList(booksAdded);
+          setDisplayList(booksAdded);
           // console.log("book added: ", booksAdded);
-        } else {
         }
       });
   }, []);
+
+  const handleFilter =(text)=>{
+    let sortedList = [...list];
+    if(text=='all'){
+      setDisplayList(list);
+    }
+    else if(text=="ratings"){
+      sortedList.sort((a,b)=> b.rating - a.rating);
+    }
+    else if(text=="pages"){
+      sortedList.sort((b,a)=>a.totalPages - b.totalPages);
+    }
+    else if(text=="year"){
+      sortedList.sort((b,a)=>a.yearOfPublishing-b.yearOfPublishing);
+    }
+    setDisplayList(sortedList);
+  }
+
 
   return (
     <div className="text-center">
       <details className="dropdown">
         <summary className="m-1 btn btn-warning text-white w-full">Filter</summary>
         <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-fit">
-          <li>
+          <li onClick={()=>handleFilter("all")}>
+            <a>All</a> 
+          </li>
+          <li onClick={()=>handleFilter("ratings")}>
             <a>Rating</a> 
           </li>
-          <li>
+          <li  onClick={()=>handleFilter("pages")}>
             <a>Pages</a>
           </li>
-          <li>
+          <li  onClick={()=>handleFilter("year")}>
             <a>Year</a>
           </li>
         </ul>
       </details>
       <ListHeader />
-      {list.map((book) => (
+      {displayList.map((book) => (
         <ShowListedBook key={book.bookId} book={book} />
       ))}
     </div>
