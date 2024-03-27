@@ -3,6 +3,7 @@ import { getStoredBook } from "./LocalStorage";
 import { useLoaderData } from "react-router-dom";
 import ShowListedBook from "./ShowListedBook";
 import ListHeader from "./ListHeader";
+import Tabs from "./Tabs";
 
 const ReadList = () => {
   const [list, setList] = useState([]);
@@ -47,6 +48,7 @@ const ReadList = () => {
 
   return (
     <div className="text-center">
+      
       <details className="dropdown">
         <summary className="m-1 btn btn-warning text-white w-full">Filter</summary>
         <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-fit">
@@ -65,9 +67,43 @@ const ReadList = () => {
         </ul>
       </details>
       <ListHeader />
-      {displayList.map((book) => (
+
+      <div role="tablist" className="tabs tabs-lifted mx-20">
+        <input
+          type="radio"
+          name="my_tabs_2"
+          role="tab"
+          className="tab"
+          aria-label="Read List"
+          checked
+        />
+        <div
+          role="tabpanel"
+          className="tab-content bg-base-100 border-base-300 rounded-box p-6"
+        >
+          {displayList.map((book) => (
         <ShowListedBook key={book.bookId} book={book} />
       ))}
+        </div>
+
+        <input
+          type="radio"
+          name="my_tabs_2"
+          role="tab"
+          className="tab"
+          aria-label="Tab 2"
+          
+        />
+        <div
+          role="tabpanel"
+          className="tab-content bg-base-100 border-base-300 rounded-box p-6"
+        >
+          Tab content 2
+        </div>
+
+        
+      </div>
+      
     </div>
   );
 };

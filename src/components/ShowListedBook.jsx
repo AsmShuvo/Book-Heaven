@@ -7,6 +7,7 @@ import { TbCategory } from "react-icons/tb";
 import { FaPenNib } from "react-icons/fa";
 import { CiShoppingTag } from "react-icons/ci";
 import { FaBookOpen } from "react-icons/fa";
+import Tabs from "./Tabs";
 
 
 
@@ -23,7 +24,9 @@ const ShowListedBook = ({ book }) => {
     image,
   } = book;
   return (
+    
     <div className="flex border p-2 w-[800px] mx-auto m-4 rounded-lg">
+      
       <div className="card card-side bg-base-100">
         <figure className="bg-gray-200 p-8 rounded-lg">
           <img src={`../../public/images/${image}.png`} alt="Movie" />
