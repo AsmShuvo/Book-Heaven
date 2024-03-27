@@ -1,18 +1,21 @@
 const getStoredBook = ()=>{
     const storedBooks = localStorage.getItem('books');
-    // console.log(typeof storedBooks, storedBooks);
     if(storedBooks){
         const x = JSON.parse(storedBooks);
-        // console.log(typeof x);
         return x;
     }
     return [];
 }
+const getWishlistedBooks = ()=>{
+    const wishlistedBooks = localStorage.getItem('wishlist');
+    if(wishlistedBooks){
+        return JSON.parse(wishlistedBooks);
+    }
+    return [];
+}
+
 export const isBookExists = (id)=>{
-    // console.log(typeof id)
     const storedBooks = getStoredBook();
-    // console.log(typeof storedBooks);
-    // console.log("stored book: ",storedBooks)
     return storedBooks.find(book => book==id);
 }
 
@@ -24,5 +27,13 @@ const saveBookToLocaalStorage  = id  =>{
         localStorage.setItem('books', JSON.stringify(storedBooks));
     }
 }
+const saveWishlistToLocalStorage = (id)=>{
+    const wishlistedBook = getWishlistedBooks();
+    if(!isBookExists(id)){
+        wishlistedBook.push(id);
+        localStorage.setItem('wishlist', JSON.stringify(wishlistedBook));
+        return false;
+    }
+}
 
-export {getStoredBook, saveBookToLocaalStorage};
+export {getStoredBook,getWishlistedBooks, saveWishlistToLocalStorage, saveBookToLocaalStorage};

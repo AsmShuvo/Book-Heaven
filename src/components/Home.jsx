@@ -7,7 +7,6 @@ import Tabs from './Tabs';
 const Home = () => {
     return (
         <div>
-            <Tabs/>
             <Banner/>
             <Books/>
         </div>

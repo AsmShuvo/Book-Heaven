@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { isBookExists, saveBookToLocaalStorage } from "./LocalStorage";
+import { isBookExists, saveBookToLocaalStorage, saveWishlistToLocalStorage } from "./LocalStorage";
 const BookDetails = () => {
   const books = useLoaderData();
-  const { bookId } = useParams();
+  const { bookId } = useParams(); //bookId is string here
 
   const book = books.find((book) => book.bookId === bookId); // both string
   // console.log(book);
@@ -33,6 +33,17 @@ const BookDetails = () => {
       saveBookToLocaalStorage(parseInt(bookId));
     }
     
+  }
+
+  const handleSaveToWishlist = ()=>{
+    if(isBookExists(parseInt(bookId))){
+      const error = new Error('This book is already read by you');
+      toast.error(error.message);
+    }
+    else{
+      toast("Added to wishlist");
+      saveWishlistToLocalStorage(parseInt(bookId));
+    }
   }
 
   return (
@@ -64,7 +75,7 @@ const BookDetails = () => {
           <p className="flex justify-between w-2/3 items-center">Rating : <span className="font-semibold" >{rating}</span></p>
           <div className="card-actions justify-start my-2 flex gap-2">
             <button onClick={handleSaveToLocalStorage} className="btn btn-outline btn-primary">Read</button>
-            <button className="btn btn-primary" >Wishlist</button>
+            <button onClick={handleSaveToWishlist} className="btn btn-primary" >Wishlist</button>
           </div>
         </div>
       </div>

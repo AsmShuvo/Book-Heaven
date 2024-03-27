@@ -13,6 +13,7 @@ import Home from './components/Home.jsx';
 import Books from './components/Books.jsx';
 import BookDetails from './components/BookDetails.jsx';
 import ReadList from './components/ReadList.jsx';
+import WishList from './components/WishList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,8 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path : "/read",
-        element: <ReadList/>,
-        loader : ()=> fetch('../books.json')
+        element: <ReadList/>
       }
     ]
   },
