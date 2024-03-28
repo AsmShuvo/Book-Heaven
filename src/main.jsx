@@ -16,6 +16,8 @@ import ReadList from './components/ReadList.jsx';
 import WishList from './components/WishList.jsx';
 import Category from './components/Category.jsx';
 import ContactUs from './components/ContactUs';
+import BarChart from './components/Sats.jsx';
+import Stats from './components/Sats.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,12 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUs/>
+      }
+      ,
+      {
+        path: "/pagestoread",
+        element: <Stats/>,
+        loader: ()=> fetch('../public/books.json')
       }
     ]
   },
