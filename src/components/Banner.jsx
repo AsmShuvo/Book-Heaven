@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div className="mx-20 ">
@@ -7,7 +8,7 @@ const Banner = () => {
           <div className="h-full flex flex-col justify-center">
             <h2 className="card-title text-5xl font-bold my-6">Books to freshen up your bookshelf</h2>
             <div className="card-actions justify-start">
-              <button className="btn btn-success">View The List</button>
+              <Link to="/read"><button className="btn btn-success">View The List</button></Link>
             </div>
           </div>
         </div>
