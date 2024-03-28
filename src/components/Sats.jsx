@@ -9,7 +9,7 @@ const Stats = () => {
   const [data, setData]= useState([]);
 
   useEffect(()=>{
-    fetch("../../public/books.json")
+    fetch("/books.json")
     .then(res=>res.json())
     .then((data)=>{
       const storedBooks = getStoredBook();

@@ -30,27 +30,29 @@ const ShowListedBook = ({ book }) => {
 
   return (
     
-    <div className="flex border p-2 w-[800px] mx-auto m-4 rounded-lg">
+    <div className="flex border p-2 md:w-[800px] mx-auto m-4 rounded-lg">
       
-      <div className="card card-side bg-base-100">
-        <figure className="bg-gray-200 p-8 rounded-lg">
-          <img src={`../../public/images/${image}.png`} alt="Movie" />
+      <div className="card card-side bg-base-100 flex-col md:flex-row">
+        <figure className="bg-gray-200 p-2 md:p-8  rounded-lg">
+          <img className="w-32 md:w-full" src={`/images/${image}.png`} alt="Movie" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title flex gap-2  items-center"><FaBookOpen /> {bookName}</h2>
-          <p className="flex gap-2 items-center"><FaPenNib /> By: {author}</p>
-          <p className="flex gap-2 items-center">
-          <CiShoppingTag />
+          <h2 className="card-title flex gap-2  items-center"> {bookName}</h2>
+          <p className="flex gap-2 items-center">By: {author}</p>
+          <p className="flex flex-col md:flex-row gap-2 items-center">
+          <div className="flex items-center gap-1">
+          
             Tags
+          </div>
             <div className="flex gap-2">
               <p className=" border border-orange-200 rounded-full p-1 text-orange-500 text-sm bg-blue-100">{tags[0]}</p>
               <p className=" border border-orange-200 rounded-full p-1 text-orange-500 text-sm bg-blue-100">{tags[1]}</p>
             </div>
             <p className="flex gap-1 items-center"> <CiTimer /> Year of Publishing : {yearOfPublishing}</p>
           </p>
-          <div className="flex">
-            <p className="flex gap-1 items-center"><IoPeople /> Publisher: {publisher}</p>
-            <p className="flex gap-1 items-center"><FaRegFilePdf /> Pages: {totalPages}</p>
+          <div className="flex flex-col md:flex-row ">
+            <p className="flex gap-1 items-center"> Publisher: {publisher}</p>
+            <p className="flex gap-1 items-center"> Pages: {totalPages}</p>
           </div>
           <hr/>
           <div className="card-actions justify-start items-center" >

@@ -19,10 +19,10 @@ const Book = ({ book }) => {
 
   return (
     <Link to={`/book/${bookId}`}>
-        <div  className=" w-fitm-2 rounded-md mx-auto my-10">
-      <div className="card w-96 bg-slate-50  p-4">
-        <figure className="bg-slate-200 p-6">
-          <img className="" src={`../../public/images/${image}.png`} alt="book-img" />
+        <div  className=" w-fit m-2 rounded-md mx-auto my-10">
+      <div className="card md:w-96 bg-slate-50  md:p-4">
+        <figure className="bg-slate-200 p-1 md:p-6">
+          <img className="" src={`/images/${image}.png`} alt="book-img" />
         </figure>
         <div className="card-body">
             <div className="card-actions justify-start">

@@ -27,7 +27,7 @@ const Category = () => {
   return (
     <div>
         <ListHeader text={"You can choice books category wise here"}/>
-      <label className="form-control w-full max-w-xs mx-auto">
+      <label className="form-control w-32 md:w-full max-w-xs mx-auto">
         <div className="label">
           <span className="label-text text-center mx-auto font-semibold text-primary">
             Pick the category you want
@@ -49,7 +49,7 @@ const Category = () => {
         </select>
       </label>
 
-      <div className="grid grid-cols-3 mx-10">
+      <div className="grid grid-cols-1  md:grid-cols-3 mx-10">
         {filterBooks.map((book) => (
           <Book book={book} />
         ))}

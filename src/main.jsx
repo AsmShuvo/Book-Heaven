@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path : "/book/:bookId",
         element: <BookDetails/>,
-        loader : ()=> fetch('../books.json')
+        loader : ()=> fetch('/books.json')
       },
       {
         path : "/read",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "/category",
         element: <Category/>,
-        loader: ()=> fetch('../public/books.json')
+        loader: ()=> fetch('/books.json')
       }
       ,
       {
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
       {
         path: "/pagestoread",
         element: <Stats/>,
-        loader: ()=> fetch('../public/books.json')
+        loader: ()=> fetch('/books.json')
       }
     ]
   },

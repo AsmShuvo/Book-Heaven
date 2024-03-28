@@ -15,7 +15,7 @@ const ReadList = () => {
 
   const [activeTab , setActiveTab] = useState("read-list");
   useEffect(() => {
-    fetch("../../public/books.json")
+    fetch("/books.json")
       .then((res) => res.json())
       .then((data) => {
         const storedBooks = getStoredBook();
@@ -35,7 +35,7 @@ const ReadList = () => {
   }, []);
 
   useEffect(() => {
-    fetch("../../public/books.json")
+    fetch("/books.json")
       .then((res) => res.json())
       .then((data) => {
         const storedBooks = getWishlistedBooks();
@@ -129,13 +129,13 @@ const ReadList = () => {
       </details>
       <ListHeader />
 
-      <div role="tablist" className="tabs tabs-lifted mx-20">
+      <div role="tablist" className="tabs tabs-lifted mx-2 my-2 md:mx-20">
         <input
           type="radio"
           name="my_tabs_2"
           role="tab"
           className="tab"
-          aria-label="Read List"
+          aria-label="Readlist"
           value="read-list"
           checked = {activeTab==="read-list"}
           onChange={()=>setActiveTab("read-list")}

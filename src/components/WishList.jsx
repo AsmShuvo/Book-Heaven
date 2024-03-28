@@ -9,7 +9,7 @@ const WishList = () => {
   const [list, setList] = useState([]);
   const [displayList, setDisplayList] = useState([]);
   useEffect(() => {
-    fetch("../../public/books.json")
+    fetch("/books.json")
       .then((res) => res.json())
       .then((data) => {
         const storedBooks = getWishlistedBooks();

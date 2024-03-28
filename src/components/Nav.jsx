@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
   return (
-    <div className="mx-20 my-2">
+    <div className="md:mx-20 my-2">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -44,7 +44,7 @@ const Nav = () => {
               
             </ul>
           </div>
-          <Link to="/"><a className="btn btn-ghost text-xl">Books server</a></Link>
+          <Link to="/"><a className="btn btn-ghost md:text-xl">Books server</a></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

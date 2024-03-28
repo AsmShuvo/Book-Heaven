@@ -9,9 +9,8 @@ const Books = () => {
         .then(res=>res.json())
         .then(data=>setBooks(data))
     },[])
-    // console.log("data loaderd: ",books);
     return (
-        <div className='grid grid-cols-3 px-20'>
+        <div className='grid grid-cols-1 md:grid-cols-3 md:px-20'>
             {
                 books.map(book => <Book key={book.bookId} book={book} />)
             }
