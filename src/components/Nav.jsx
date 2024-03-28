@@ -38,6 +38,9 @@ const Nav = () => {
               <li>
                 <NavLink to="/category">Select Category</NavLink>
               </li>
+              <li>
+                <NavLink to="/contact">Contact us</NavLink>
+              </li>
               
             </ul>
           </div>
@@ -57,6 +60,10 @@ const Nav = () => {
               <li>
                 <NavLink to="/category">Select Category</NavLink>
               </li>
+              <li>
+                <NavLink to="/contact">Contact us</NavLink>
+              </li>
+              
           </ul>
         </div>
         <div className="navbar-end">

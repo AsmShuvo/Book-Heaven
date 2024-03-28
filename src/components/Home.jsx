@@ -4,6 +4,7 @@ import Books from './Books';
 import ListHeader from './ListHeader';
 import ReadList from './ReadList';
 import Tabs from './Tabs';
+import ContactUs from './ContactUs';
 const Home = () => {
     return (
         <div>

@@ -15,6 +15,7 @@ import BookDetails from './components/BookDetails.jsx';
 import ReadList from './components/ReadList.jsx';
 import WishList from './components/WishList.jsx';
 import Category from './components/Category.jsx';
+import ContactUs from './components/ContactUs';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
         path: "/category",
         element: <Category/>,
         loader: ()=> fetch('../public/books.json')
+      }
+      ,
+      {
+        path: "/contact",
+        element: <ContactUs/>
       }
     ]
   },
