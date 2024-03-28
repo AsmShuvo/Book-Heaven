@@ -39,12 +39,12 @@ const Nav = () => {
                 <NavLink to="/category">Select Category</NavLink>
               </li>
               <li>
-                <NavLink to="/contact">Contact us</NavLink>
+                <NavLink to="/faq">FAQ</NavLink>
               </li>
               
             </ul>
           </div>
-          <Link to="/"><a className="btn btn-ghost md:text-xl">Books server</a></Link>
+          <Link to="/"><a className="btn btn-ghost font-bold italic play text-green-900 md:text-2xl">Book Heaven</a></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -61,7 +61,7 @@ const Nav = () => {
                 <NavLink to="/category">Select Category</NavLink>
               </li>
               <li>
-                <NavLink to="/contact">Contact us</NavLink>
+                <NavLink to="/faq">FAQ</NavLink>
               </li>
               
           </ul>

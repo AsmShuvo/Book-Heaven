@@ -6,7 +6,7 @@ const Banner = () => {
       <div className="card lg:card-side bg-base-200 p-5">
         <div className="card-body">
           <div className="h-full flex flex-col justify-center">
-            <h2 className="card-title text-5xl font-bold my-6">Books to freshen up your bookshelf</h2>
+            <h2 className="card-title text-5xl font-bold play my-6">Books to freshen up your bookshelf</h2>
             <div className="card-actions justify-start">
               <Link to="/read"><button className="btn btn-success">View The List</button></Link>
             </div>

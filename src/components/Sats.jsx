@@ -49,7 +49,7 @@ const Stats = () => {
   return (
     <div>
       <BarChart
-        width={2500}
+        width={1300}
         height={500}
         data={data}
         margin={{

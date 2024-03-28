@@ -34,7 +34,7 @@ const ShowListedBook = ({ book }) => {
       
       <div className="card card-side bg-base-100 flex-col md:flex-row">
         <figure className="bg-gray-200 p-2 md:p-8  rounded-lg">
-          <img className="w-32 md:w-full" src={`/images/${image}.png`} alt="Movie" />
+          <img className="w-32 md:w-84" src={`/images/${image}.png`} alt="Movie" />
         </figure>
         <div className="card-body">
           <h2 className="card-title flex gap-2  items-center"> {bookName}</h2>

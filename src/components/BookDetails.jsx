@@ -57,7 +57,7 @@ const BookDetails = () => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title md:text-4xl font-semibold">{bookName}</h2>
+          <h2 className="card-title md:text-4xl font-semibold play">{bookName}</h2>
           <p className="text-lg font-semibold text-gray-500">By: {author}</p>
           <hr/>
           <p className="text-gray-600 font-semibold">{category}</p>
